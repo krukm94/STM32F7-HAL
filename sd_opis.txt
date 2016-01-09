@@ -1,0 +1,143 @@
+------------------
+-----------------
+-----OPIS FATFS---
+Autor: Michal Kruk
+
+=========== WPROWADZENIE DO FATFS ===============
+
+###> Funkcje FatFS to:		=====================================================================================
+ff.c
+ff.h
+diskio.h
+ffconf.h
+integer.h
+
+--->Zeby skljac FatFS wiele róznych rzeczy z róznym API nalezy miec plik sklejajajacy tlumaczacy
+APIs pomiedzy FatFs
+
+
+###> Co robi kazdy plik =========================================================================================
+
+---> ffconf.h  dzieki niemu mozemy konfigurowac ustawienia FatFS	---> MOZNA TYM ZMIENIAC ROZMIAR CALEGO FATFS
+http://elm-chan.org/fsw/ff/en/config.html
+		
+========		Konfiguracja funkcji"
+		_FS_READONLY:	 	umozna ustawic tryb Read/Weire lub Read-only
+		_FS_MINIMALIE:		ustawia których funkcji uzywamy
+		_USE_STRFUNC :		ON/OFF string function
+========		Namespace and Locale Configurations	
+
+========		Opcje Dysku
+
+========		Konfiguracje systemu
+	
+
+
+
+###> Do poprawnego dzialania:
+
+wystarczyy tak naprawde:
+disk_status
+disk_initialize
+disk_read
+
+Wymagane funkcjie na strnie:
+http://elm-chan.org/fsw/ff/en/appnote.html
+
+=========================
+=========ZAPIS===========
+=========================
+NIE uzywac single sector zapis bo to strasznie spowalnia dzialanie zapisu, najlepiej kiedy zmienna ma rozmiar sektoru
+
+
+=========================
+=========FUNKCJE=========
+=========================
+
+http://elm-chan.org/fsw/ff/00index_e.html
+
+
+Krótki opis funkcji:
+============================================================== FILE ACCESS ==========================================
+
+
+## f_open  -- 		otwieranie pliku ( przed tym musi byc f_mount)
+
+## f_close --		zamykanie pliku
+
+## f_read  -- 		odczyt z pliku
+
+## f_write -- 		wpisujemy date do pliku
+
+## f_lseek -- 		funkcja przesuwa wskaznik otworzonego objektu ( przypadek kiedy informacja jest wieksza od pliku)
+
+## f_truncate -- 	ucina rozmiar pliku do obecnego read/write wskaznika
+
+## f_sync --	 	function flushes the cached information of a writing file.
+
+## f_forward -- 	funkcja odczytuje dane z pliku i wrzuca je do bierzacego strumienia ( do jakiejs naszej funkcji )
+
+## f_gets 	--		Funkcja czyta stringi do puki nie napotka /n, koniec pliku , badz /0
+
+## f_putc	--		wstawia char do pliku
+
+## f_puts	--		wstawia string do pliku
+
+## f_printf	--		wstawia formatowany string do pliku
+
+## f_tell	--		dostaje obecny read/write wskaznik
+
+## f_eof	--		function tests for end-of-file on a file.
+
+## f_size	--		wpisujemy rozmiar pliku
+
+## f_error  --		testuje plik pod wzgledem errorów
+
+============================================================= DIRECTORY ACCESS =====================================
+
+## f_opendir	--	otwiera folder
+
+## f_closedir	--	zamyka folder
+
+## f_readdir	--	odczytuje zawartosc pliku
+
+## f_findfirst	--	przeszukuje folder
+
+f_findnext 		--	kontynuBowanie findfirst
+
+=============================================================	File/Directory Management ==========================
+
+## f_stat 		--  sprawdza obecnosc pliku ablo folderu
+
+## f_unlink 	--	usuwa plik lub folder
+
+## f_rename		--	zmienia nazme pliku lub folderu
+
+## f_chmod		--	zmiana atrybutu pliku lub folderu
+
+## f_utime		--	function changes the timestamp of a file or sub-directory.
+
+## f_mkdir		--	function creates a new directory.
+
+## f_chdir		--	function changes the current directory of a drive.
+
+## f_chdrive	--  function changes the current drive.
+
+## f_getcwd		--	function retrieves the current directory and current drive.
+
+============================================================	VOLUME MENAGMENT ===================================
+
+## f_mount :	--	 f_mount rejestruje OBJEKY SYSTEMOWY u|ywany przez logicznego drivera   <----
+
+						OBJEKT SYSTEMOWY to wymagany obszar dla kazdego logicznego drivera. Musi byc podany przed uzyciem jakiejkolwiek funkcji
+
+## f_mkfs:		--	 fucntion creates an FAT volume on the logical drive.
+
+## f_fdisk:		--		The f_fdisk fucntion divides a physical drive.
+
+## f_getfree	--	The f_getfree function gets number of the free clusters on the volume.
+
+## f_getlabel	--	The f_getlabel function returns volume label and volume serial number of a drive.
+
+## f_satlabel	--	The f_setlabel function sets/removes the label of a volume.
+
