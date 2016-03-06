@@ -54,9 +54,3 @@
 .\objects\stm32f7_lcd.o: .\lib\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal_hcd.h
 .\objects\stm32f7_lcd.o: .\lib\STM32F7xx_HAL_Driver\Inc\stm32f7xx_ll_usb.h
 .\objects\stm32f7_lcd.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery.h
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/fonts.h
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/font24.c
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/font20.c
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/font16.c
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/font12.c
-.\objects\stm32f7_lcd.o: source\../../../Utilities/Fonts/font8.c

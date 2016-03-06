@@ -63,11 +63,3 @@
 .\objects\sd_card.o: .\lib\BSP\STM32746G-Discovery\../Components/rk043fn48h/rk043fn48h.h
 .\objects\sd_card.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h
 .\objects\sd_card.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery.h
-.\objects\sd_card.o: source\../../../Utilities/Fonts/fonts.h
-.\objects\sd_card.o: .\lib\FatFs\src\ff_gen_drv.h
-.\objects\sd_card.o: .\lib\FatFs\src\diskio.h
-.\objects\sd_card.o: .\lib\FatFs\src\integer.h
-.\objects\sd_card.o: .\lib\FatFs\src\ff.h
-.\objects\sd_card.o: .\lib\ffconf.h
-.\objects\sd_card.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery_sd.h
-.\objects\sd_card.o: .\lib\FatFs\src\drivers\sd_diskio.h

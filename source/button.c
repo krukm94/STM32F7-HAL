@@ -4,6 +4,7 @@
 
 static void (*button)(void);
 
+//===============================================================================================================
 void button_init(void){
 	
 		GPIO_InitTypeDef    GPIO;
@@ -23,8 +24,7 @@ void button_init(void){
 	HAL_GPIO_Init(GPIOI, &GPIO);
 }
 
-
-
+//===============================================================================================================
 void setButtonIrqFunc(void (*button_callback)(void))
 {
 	if(button_callback)
@@ -36,6 +36,7 @@ void setButtonIrqFunc(void (*button_callback)(void))
 	}
 }
 
+//===============================================================================================================
 void EXTI15_10_IRQHandler(void)
 {
 	__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_PIN_11);

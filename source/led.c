@@ -1,5 +1,6 @@
 #include "led.h"
 
+//===============================================================================================================
 /* inicjalizacja odpowiedniego portu GPIO */
 void led_port_init(void)
 {
@@ -16,23 +17,24 @@ void led_port_init(void)
 	//
 	GPIO.Speed = GPIO_SPEED_FAST;
 	
-	//przesyBanie inicjalizacji 
+	//gpioi port init 
 	HAL_GPIO_Init(GPIOI, &GPIO);
 }
 
+//===============================================================================================================
 void ledOn( void )
 {
 	HAL_GPIO_WritePin(GPIOI,GPIO_PIN_1,GPIO_PIN_SET);
 }
 
+//===============================================================================================================
 void ledOff( void )
 {
 	HAL_GPIO_WritePin(GPIOI,GPIO_PIN_1,GPIO_PIN_RESET);
-	
 }
 
+//===============================================================================================================
 void ledToggle( void)
 {
 	HAL_GPIO_TogglePin(GPIOI,GPIO_PIN_1);
-
 }

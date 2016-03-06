@@ -62,4 +62,3 @@
 .\objects\main.o: .\lib\BSP\STM32746G-Discovery\../Components/rk043fn48h/rk043fn48h.h
 .\objects\main.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h
 .\objects\main.o: .\lib\BSP\STM32746G-Discovery\stm32746g_discovery.h
-.\objects\main.o: source\../../../Utilities/Fonts/fonts.h

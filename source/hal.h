@@ -19,7 +19,7 @@
 
 #define _nrUserTimer            4
 
-
+//===============================================================================================================
 typedef struct{
    //system
 			
@@ -71,10 +71,9 @@ typedef struct{
 */
 }t_halLib;
 extern t_halLib *HAL;
-//#define HAL ((t_evblLib *) 0x8010100)
 
+//===============================================================================================================
 /* functions */
-
-void SystemClock_Config(void);
+static void SystemClock_Config(void);
 
 #endif // __hal_H__
